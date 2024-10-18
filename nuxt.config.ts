@@ -21,7 +21,6 @@ export default defineNuxtConfig({
   },
   ui: {
     global: true,
-    icons: ['heroicons', 'simple-icons']
   },
   runtimeConfig: {
     public: {
@@ -35,5 +34,20 @@ export default defineNuxtConfig({
       callback: '/confirm',
       exclude: ['/', '/register', '/admin', '/admin/users', '/admin/stocks', '/admin/transactions'],
     }
-  }
+  },
+  tailwindcss: {
+    exposeConfig: true,
+    config: {
+      content: [
+        'node_modules/@nuxt/ui/**/*.{js,vue,ts}'
+      ],
+      theme: {
+        extend: {
+          colors: {
+            // Your custom colors here
+          }
+        }
+      }
+    }
+  },
 })
